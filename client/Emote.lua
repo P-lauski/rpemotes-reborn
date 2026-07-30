@@ -911,6 +911,14 @@ CreateExport('getCurrentEmote', function()
     return currentEmote
 end)
 
+-- Expose the animal-emote list + model compatibility (useful for pet scripts)
+CreateExport('GetAnimalEmotes', function()
+    return RP.AnimalEmotes
+end)
+CreateExport('IsAnimalEmoteCompatible', function(model, emoteName)
+    return IsModelCompatible(model, emoteName)
+end)
+
 -- Door stuff
 local openingDoor = false
 AddEventHandler('CEventOpenDoor', function(unk1)
